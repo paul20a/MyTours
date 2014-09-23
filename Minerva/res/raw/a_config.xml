@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
     <trail
-        id="6253"
         image="dsc4175"
-        latitude=""
-        longitude=""
-        source="http://stories.rbge.org.uk/archives/6253">
+        map="map"
+        latitudeN="55.967402"
+        longitudeE="-3.202895" 
+        latitudeS="55.962836"
+        longitudeW="-3.214181">
         <title>
 <![CDATA[ Glasshouses - Windows on the World ]]></title>
 

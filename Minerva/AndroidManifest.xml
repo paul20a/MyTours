@@ -13,7 +13,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+    
     <application
         android:allowBackup="true" 
         android:icon="@drawable/ic_launcher"
@@ -22,7 +23,7 @@
         <activity
             android:name=".ActivityMain"
             android:configChanges="orientation|keyboardHidden"
-            android:label="@string/empty"
+            android:label="@string/point_title"
             android:parentActivityName=".ActivitySelect" >
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -32,7 +33,7 @@
         </activity>
         <activity
             android:name=".ActivitySelect"
-            android:label="@string/empty"
+            android:label="@string/select_title"
             android:parentActivityName=".ActivityTour" >
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -41,7 +42,7 @@
                 android:value="dcs.gla.ac.uk.minerva.ActivityTrailSelect" />
         </activity>
         <activity android:name=".ActivityTour"       
-                 android:label="@string/empty">
+                 android:label="@string/intro_title">
             
             <intent-filter android:label="@string/app_name">
                 <action android:name="android.intent.action.MAIN" />

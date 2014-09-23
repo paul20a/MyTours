@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
-    android:layout_margin="16dp"
+    android:padding="@dimen/activity_margin"
     android:orientation="vertical" >
 
     <TextView
@@ -32,7 +32,7 @@
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/activity_margin"
             android:layout_weight="1" >
 
             <TextView

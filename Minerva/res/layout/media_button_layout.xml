@@ -26,14 +26,5 @@
             android:src="@android:drawable/ic_media_play"
             android:text="@string/play" />
 
-        <ImageButton
-            android:id="@+id/btnPause"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="@string/pause"
-            android:src="@android:drawable/ic_media_pause"
-            android:text="@string/pause" />
 
     </LinearLayout>

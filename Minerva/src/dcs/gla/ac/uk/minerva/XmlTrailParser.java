@@ -3,6 +3,7 @@ package dcs.gla.ac.uk.minerva;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.osmdroid.util.BoundingBoxE6;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -12,7 +13,8 @@ import org.xmlpull.v1.XmlPullParserException;
  * 
  */
 public class XmlTrailParser extends XmlParser {
-	String image;
+	private String image,map;
+	private BoundingBoxE6 mapBounds;
 
 	/*
 	 * (non-Javadoc)
@@ -39,6 +41,17 @@ public class XmlTrailParser extends XmlParser {
 			if (name.equals("trail")) {
 				// get image name
 				image = parser.getAttributeValue(ns, "image");
+				map = parser.getAttributeValue(ns, "map");
+				final double latNE, lngNE, latSW, lngSW;
+				latNE = Double.parseDouble(parser.getAttributeValue(ns,
+						"latitudeN"));
+				lngNE = Double.parseDouble(parser.getAttributeValue(ns,
+						"longitudeE"));
+				latSW = Double.parseDouble(parser.getAttributeValue(ns,
+						"latitudeS"));
+				lngSW = Double.parseDouble(parser.getAttributeValue(ns,
+						"longitudeW"));
+				mapBounds = new BoundingBoxE6(latNE, lngNE,latSW, lngSW);
 				// add + parse entry
 				entries.add(readEntry(parser));
 			} else {
@@ -79,10 +92,11 @@ public class XmlTrailParser extends XmlParser {
 				description = readTag(parser, "summary");
 			} else if (tag.equals("file")) {
 				file = readTag(parser, "file");
+				file=removeExtension(file);
 			} else {
 				skip(parser);
 			}
 		}
-		return new Trail(title, description, image, file);
+		return new Trail(title, description, image, file,map,mapBounds);
 	}
 }

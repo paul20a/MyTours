@@ -2,6 +2,7 @@ package dcs.gla.ac.uk.minerva;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;
+
 public class MinervaLruCache {
 	private LruCache<String, Bitmap> bitmapCache;
 	//divisor to assign memory to cache

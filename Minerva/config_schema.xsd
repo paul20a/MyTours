@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="data">
+    <xs:complexType>
+      <xs:sequence>
+	    <xs:element name="trail" minOccurs="1">
+			<xs:complexType>
+				<xs:attribute name="image" type="xs:string"/>
+				<xs:attribute name="map" type="xs:string"/>
+				<xs:attribute name="latitudeN" type="xs:decimal"/>
+				<xs:attribute name="longitudeE" type="xs:decimal"/>
+				<xs:attribute name="latitudeS" type="xs:decimal"/>
+				<xs:attribute name="longitudeW" type="xs:decimal"/>
+				<xs:element name="title" type="xs:string" />	
+				<xs:element name="summary" type="xs:string" />
+				<xs:element name="file" type="xs:string" />   
+			</xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

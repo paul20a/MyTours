@@ -3,9 +3,11 @@ package dcs.gla.ac.uk.minerva;
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,7 +108,10 @@ public class FragmentViewPoint extends Fragment {
 		else if (BitmapProcessor.cancelPotentialWork(rID, imageView)) {
 			// create and execute anew bitmapProcessor task
 			final BitmapProcessor task = new BitmapProcessor(imageView, r,mLruCache);
-			task.execute(rID);
+			Display display = getActivity().getWindowManager().getDefaultDisplay();
+			Point size = new Point();
+			display.getSize(size);
+			task.execute(rID,size.x,size.y);
 			// create and assign an async drawable to the Imageview
 			final AsyncDrawable asyncDrawable = new AsyncDrawable(r, null, task);
 			imageView.setImageDrawable(asyncDrawable);

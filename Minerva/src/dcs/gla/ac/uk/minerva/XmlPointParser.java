@@ -42,7 +42,9 @@ public class XmlPointParser extends XmlParser {
 			if (name.equals("point")) {
 				// parse entry
 				image = parser.getAttributeValue(ns, "image");
+				image=removeExtension(image);
 				audio = parser.getAttributeValue(ns, "audio");
+				audio=removeExtension(audio);
 				id = Integer.parseInt(parser.getAttributeValue(ns, "id"));
 				try {
 					lon = Double.parseDouble(parser.getAttributeValue(ns,

@@ -145,5 +145,20 @@ public abstract class XmlParser {
 		text = text.trim();
 		return text;
 	}
+	
+	/**
+	 * 
+	 * This method removes file extensions if present to ensure compatibility as a raw resource.
+	 * 
+	 * @param filename
+	 * @return edited filename suitable for use in raw folder
+	 */
+	protected String removeExtension(String filename){
+		if(filename!=null&&filename.contains(".")){
+			int i=filename.indexOf(".");
+			filename=filename.substring(0, i+1);
+		}
+		return filename;
+	}
 
 }

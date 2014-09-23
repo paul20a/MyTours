@@ -5,27 +5,20 @@
     android:layout_margin="8dp" >
 
     <Button
-        android:id="@+id/goBtn"
+        android:id="@+id/btnGo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/numberInTxt"
-        android:layout_toRightOf="@+id/numberInTxt"
+        android:layout_alignTop="@+id/txtNumIn"
+        android:layout_toRightOf="@+id/txtNumIn"
         android:text="@string/search" />
 
     <EditText
-        android:id="@+id/numberInTxt"
+        android:id="@+id/txtNumIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:ems="10"
         android:inputType="number" />
-
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/numberInTxt"
-        android:layout_marginTop="16dp"
-        layout="@layout/media_button_layout" />
 
 </RelativeLayout>

@@ -1,0 +1,22 @@
+- Main Page
+This provides a brief overview of the tour,
+to continue press "start the tour".
+
+- Selection Page
+A list of points is given select any point to view it in detail. A map can be accessed through the tab menu at the top,
+ selecting any of the markers will open its menu.
+
+- Detailed View
+Here a detailed view of a point is given media player controls can be found at the bottom of the screen.
+These controls will be locked if no audio is provided for the point. These views can be swiped through for easy navigation.
+
+- Audio Output
+Audio output can be controlled from either a toggle button in the action bar at the top, or by selecting 
+change audio output from the options menu, depending on the device being used.
+
+- ID Search
+Some points may provide an ID number to jump to the relevant detailed view, select the search button from the action bar
+ or the options menu depending on the device. Enter the number into the text box and press search. at which point 
+ the detailed view will be given.
+
+ 

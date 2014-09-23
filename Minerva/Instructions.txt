@@ -1,0 +1,57 @@
+Instructions
+
+BUILDING
+To build the file eclipse with android sdk is required instructions on how to install this can be found here
+ http://developer.android.com/sdk/index.html , once set-up the project can be imported into eclipse. 
+ 
+APP ICONS
+To change application images change the appropriate image in the res/drawables folders.
+Devices of different sizes use different drawables folders so multiple different image sizes should be provided.
+A guide on how to create icons is located given here http://developer.android.com/design/style/iconography.html
+
+Here are some of the drawables that can be changed.
+-app logo:  ic_launcher.png
+-markers for locations: flag.png
+
+NAMES
+To edit the name of buttons, pages and the app within the res/values/ folder there is a strings.xml file edit
+ these strings to change names and give tours a more unique feel if required.
+
+DATA
+file names should use lower-case a-z,0-9 and _ names only and must start with a lower-case letter.
+All files.
+
+To set-up a tour two xml files are required;
+The a_config.xml file contains information needed to set-up the tour and provide a brief description of
+the tour. Below is a brief description of the file and it's components and their use.
+
+entity-data: this entity holds all data.
+	entity-trail: holds information on a trail.
+		attributes:
+			image - name of image file to show with map.
+			map - name of image to use as map.
+			latitudes and longitudes of north east and south west points of map.
+			
+	entity-title: tour title.
+	entity-summary: summary of the tour.
+	entity-file: the name of the second xml file holding information on points.
+	
+The second xml file should have the same name as the one described in the config xml file.
+This file holds information on points in the tour.
+	
+entity-audio_tour: this entity holds all data.
+	entity-point: holds information on a point.
+		attributes:
+			id - an id number associated with the point, this is used to search for the point in the app.
+			image - name of image file to show with map.
+			audio - name of an audio file.
+			latitude and longitude of the point.	
+	entity-title: point title.
+	entity-summary: summary of the point.
+	
+All XML,images of points and tours, and all audio files should be placed in the res/raw/ folder. 
+When accessing this folder android excludes file type so tree.mp3 and tree.jpg will be considered the same. 
+Due to this such files should have unique names such as tree_mp3.mp3 or tree_jpg.jpg.
+
+SAMPLE DATA
+is packaged to make development easier, delete files in the res/raw with the exception of a_config,a_about and a_help.

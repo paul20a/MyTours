@@ -84,17 +84,15 @@ public class BitmapProcessor extends AsyncTask<Integer, Void, Bitmap> {
 	@Override
 	protected Bitmap doInBackground(Integer... params) {
 		data = params[0];
+		int sizex=params[1];
+		int sizey=params[2];
 		// check image isn't recycled or task hasn't been cancelled
 		if (imageViewReference != null || !this.isCancelled()) {
-			ImageView iView = imageViewReference.get();
 			// try to process the bitmap
 			try {
-				// get dimensions of imageView
-				int h = iView.getMeasuredHeightAndState();
-				int w = iView.getMeasuredWidthAndState();
 				//decode and sample bitmap
 				final Bitmap bitmap = decodeSampledBitmapFromResource(res, data,
-						w, h);
+						sizex, sizey);
 				mLruCache.cacheBitmap(String.valueOf( params[0]), bitmap);
 				return bitmap;
 			} catch (Exception e) {
